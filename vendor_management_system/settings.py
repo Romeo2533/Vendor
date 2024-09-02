@@ -127,3 +127,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# For development
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'vendor_app.utils.StandardResultsSetPagination',
+    'PAGE_SIZE': 20,
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
